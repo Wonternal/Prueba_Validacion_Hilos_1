@@ -1,12 +1,11 @@
 
 import java.util.List;
 
-public class Comensal extends Thread implements Runnable{
+public class Comensal implements Runnable{
     private String nombre;
     List<Magdalena> mesa;
-    public Comensal(int priority, String nombre, List<Magdalena> mesa) {
+    public Comensal(String nombre, List<Magdalena> mesa) {
         this.nombre = nombre;
-        this.setPriority(priority);
         this.mesa = mesa;
     }
 
@@ -16,7 +15,7 @@ public class Comensal extends Thread implements Runnable{
             System.out.println(nombre + " ha cogido una magdalena");
             mesa.remove(0);
             try {
-                this.sleep(10000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

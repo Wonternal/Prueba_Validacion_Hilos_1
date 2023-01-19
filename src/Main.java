@@ -9,9 +9,13 @@ public class Main {
             mesa.add(new Magdalena());
         }
 
-        Comensal comensal1 = new Comensal(1, "Eduardo", mesa);
-        Comensal comensal2 = new Comensal(5, "Gabri", mesa);
-        Comensal comensal3 = new Comensal(10, "Dario", mesa);
+        Thread comensal1 = new Thread(new Comensal("Eduardo", mesa));
+        Thread comensal2 = new Thread(new Comensal("Gabri", mesa));
+        Thread comensal3 = new Thread(new Comensal("Dario", mesa));
+
+        comensal1.setPriority(1);
+        comensal2.setPriority(5);
+        comensal3.setPriority(10);
 
         comensal1.start();
         comensal2.start();
