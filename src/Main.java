@@ -13,5 +13,9 @@ public class Main {
         Comensal comensal2 = new Comensal(5, "Gabri", mesa);
         Comensal comensal3 = new Comensal(10, "Dario", mesa);
 
+        comensal1.start();
+        comensal2.start();
+        comensal3.start();
+
     }
 }
